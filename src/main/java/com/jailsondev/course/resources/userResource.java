@@ -9,10 +9,11 @@ import com.jailsondev.course.entities.User;
 
 @RestController
 @RequestMapping(value = "/users")
-public class userResource {
+public class UserResource {
 	@GetMapping
 public ResponseEntity<User> findAll(){
-	User u = new User(1L, "Maria", "Maria@gmail.com", "(98) 98107-3034", "maria073034");
+	User u = new User(1L, "Maria", "Maria@gmail.com", "(98) 98107-3034", "maria073035");
+	
 	return ResponseEntity.ok().body(u);
 }
 }
