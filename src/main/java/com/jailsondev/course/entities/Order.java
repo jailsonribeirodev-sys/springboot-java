@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.jailsondev.course.entities.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ public class Order implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Instant moment;
+	private Integer orderStatus;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "client_id")
@@ -31,11 +33,21 @@ public class Order implements Serializable {
 
 	}
 
-	public Order(Long id, Instant moment, User client) {
+	public Order(Long id, Instant moment, User client, OrderStatus orderStatus) {
 
 		this.id = id;
+		setOrderStatus(orderStatus);
 		this.moment = moment;
 		this.client = client;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return OrderStatus.valueOf(orderStatus);
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		if (orderStatus != null)
+			this.orderStatus = orderStatus.getCode();
 	}
 
 	public Long getId() {
