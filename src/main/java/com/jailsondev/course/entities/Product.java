@@ -1,11 +1,9 @@
-package com.jailsondev.course.services;
+package com.jailsondev.course.entities;
 
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
-import com.jailsondev.course.entities.Category;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.jailsondev.course.entities.Order;
-import com.jailsondev.course.services.Product;
+import com.jailsondev.course.entities.Product;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;

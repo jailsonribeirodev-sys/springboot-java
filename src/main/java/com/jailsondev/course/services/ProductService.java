@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jailsondev.course.entities.Product;
 import com.jailsondev.course.repositories.ProductRepository;
 @Service
 public class ProductService {
