@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.jailsondev.course.entities.User;
 import com.jailsondev.course.repositories.UserRepository;
+import com.jailsondev.course.services.exceptions.ResourceNotFoundException;
 @Service
 public class UserService {
 	@Autowired
@@ -18,7 +19,7 @@ public class UserService {
 	}
 	public User findById(Long id) {
 		Optional<User> obj =  repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public User insert(User obj) {
