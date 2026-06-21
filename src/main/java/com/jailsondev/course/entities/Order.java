@@ -95,7 +95,7 @@ public class Order implements Serializable {
 	}
 	public Double getTotal() {
 		
-	return items.stream().mapToDouble(OrderItem::getSubTotal).reduce(0, Double::sum);
+	return items.stream().mapToDouble(OrderItem::getSubTotal).sum();
 		
 	}
 	@Override
